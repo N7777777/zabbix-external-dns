@@ -6,4 +6,4 @@ Simple zabbix solution for remote monitoring if dns server is working
 1. Make an alias for *host* to zabbix extensl scripts directory, e.g.:
 `ln -s /usr/bin/host /usr/lib/zabbix/externalscripts`
 1. Apply zabbix template
-1. Set template or host level macros {$DNSCHECK} - this name will be used for resolution
+1. Set template or host level macros {$DNSCHECK} - this name will be used for DNS resolution to test DNS server
