@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-03-06T11:13:18Z</date>
+    <date>2019-03-07T17:46:41Z</date>
     <groups>
         <group>
             <name>Upwork</name>
@@ -88,6 +88,22 @@
         </template>
     </templates>
     <triggers>
+        <trigger>
+            <expression>{Template DNS App Service:host[{$DNSCHECK} ,{HOST.CONN}].str(has address)}=0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>DNS service can not resolve domain {$DNSCHECK}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
         <trigger>
             <expression>{Template DNS App Service:host[{$DNSCHECK} ,{HOST.CONN}].str(;; connection timed out; no servers could be reached)}=1</expression>
             <recovery_mode>0</recovery_mode>
