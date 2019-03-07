@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-03-07T17:46:41Z</date>
+    <date>2019-03-07T17:57:49Z</date>
     <groups>
         <group>
             <name>Upwork</name>
@@ -24,7 +24,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>host[{$DNSCHECK} ,{HOST.CONN}]</key>
+                    <key>host[{$DNSCHECK},{HOST.CONN}]</key>
                     <delay>60s</delay>
                     <history>90d</history>
                     <trends>0</trends>
@@ -89,7 +89,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template DNS App Service:host[{$DNSCHECK} ,{HOST.CONN}].str(has address)}=0</expression>
+            <expression>{Template DNS App Service:host[{$DNSCHECK},{HOST.CONN}].str(has address)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>DNS service can not resolve domain {$DNSCHECK}</name>
@@ -105,7 +105,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template DNS App Service:host[{$DNSCHECK} ,{HOST.CONN}].str(;; connection timed out; no servers could be reached)}=1</expression>
+            <expression>{Template DNS App Service:host[{$DNSCHECK},{HOST.CONN}].str(;; connection timed out; no servers could be reached)}=1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>DNS service does not respond</name>
